@@ -1,3 +1,7 @@
+@import 'variables';
+
+@import 'mixin';
+
 $perfect-red: red;
 $badass: #bada55;
 
@@ -17,13 +21,6 @@ $badass: #bada55;
 	&:hover {
 		color :$hover;
 	}
-}
-
-%block {
-	width: 50px;
-	height: 50px;
-	border: 2px, solid, black;
-	display: inline-block;
 }
 
 // variables //
@@ -64,8 +61,21 @@ nav {
 	@include my-btn(orange, 15px, white)
 }
 
+
+%block {
+	width: 50px;
+	height: 50px;
+	border: 2px, solid, black !important;
+	display: inline-block;
+}
+
 .box {
 	@extend %block;
 }
+
+
+
+
+
 
 
