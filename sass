@@ -1,0 +1,71 @@
+$perfect-red: red;
+$badass: #bada55;
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+		-moz-border-radius: $radius;
+			-ms-border-radius: $radius;
+				border-radius: $radius;
+}
+
+@mixin my-btn($color, $radius, $hover){
+	color: $color;
+	border-width: 2px;
+	@include border-radius($radius);
+
+
+	&:hover {
+		color :$hover;
+	}
+}
+
+%block {
+	width: 50px;
+	height: 50px;
+	border: 2px, solid, black;
+	display: inline-block;
+}
+
+// variables //
+
+body {
+    background-color: $perfect-red;
+}
+
+//nesting//
+
+nav {
+	ul {
+	    margin: 0;
+	    padding: 0;
+	    list-style: none;
+
+		li { 
+			display: inline-block; 
+			margin-right: 5px;
+			border: 2px solid white;
+			@include border-radius(5px);
+
+			a {
+			color: white;
+			display: block;
+			padding: 6px 12px;
+			text-decoration: none;
+			}
+		}		
+	}
+}
+
+.myBtn {
+	@include my-btn(green, 10px, pink)
+}
+
+.yourBtn {
+	@include my-btn(orange, 15px, white)
+}
+
+.box {
+	@extend %block;
+}
+
+
